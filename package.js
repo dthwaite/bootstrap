@@ -5,8 +5,8 @@ Package.describe({
   git: 'https://github.com/meteor-useraccounts/bootstrap.git',
 });
 
-Package.on_use(function(api, where) {
-  api.versionsFrom('METEOR@1.0');
+Package.onUse(function(api, where) {
+  api.versionsFrom(['1.0','2.3']);
 
   api.use([
     'templating',
@@ -25,7 +25,7 @@ Package.on_use(function(api, where) {
     'useraccounts:core@1.14.2',
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/at_error.html',
     'lib/at_error.js',
     'lib/at_form.html',
@@ -67,7 +67,7 @@ Package.on_use(function(api, where) {
   ], ['client']);
 });
 
-Package.on_test(function(api) {
+Package.onTest(function(api) {
   api.use([
     'useraccounts:bootstrap',
     'useraccounts:core@1.14.2',
@@ -79,7 +79,7 @@ Package.on_test(function(api) {
     'test-helpers'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'tests/tests.js'
   ], ['client', 'server']);
 });
